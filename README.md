@@ -11,7 +11,7 @@
 * Does not currently work for remotes using SSH keys with passphrases.
 
 #### Visual Studio shortcuts
-Do not choose `Use output window` since input is required.
+Do not choose `Use output window` since input is required. For faster operations use the quickfix2 command instead of quickfix. It invokes git cli directly instead of using lib2git.
 
 ##### Simple QuickFix
 `quickfix --repo $(SolutionDir) --file $(ItemPath) --line $(CurLine) --column $(CurCol)`
