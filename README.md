@@ -11,14 +11,20 @@
 * Does not currently work for remotes using SSH keys with passphrases.
 
 #### Visual Studio shortcuts
-Do not choose `Use output window` since input is required. For faster operations use the quickfix2 command instead of quickfix. It invokes git cli directly instead of using lib2git.
+Do not choose `Use output window` since input is required. For faster operations use the quickfix2 command instead of quickfix. It invokes git cli directly instead of using lib2git. 
 
 ##### Simple QuickFix
-`quickfix --repo $(SolutionDir) --file $(ItemPath) --line $(CurLine) --column $(CurCol)`
+`quickfix2 -r $(ItemPath) -f $(ItemPath) -l $(CurLine) -c $(CurCol)`
+
 ##### QuickFix with a clean worktree every time
-`quickfix --repo $(SolutionDir) --file $(ItemPath) --line $(CurLine) --column $(CurCol) --clean`
+`quickfix2 -r $(ItemPath) -f $(ItemPath) -l $(CurLine) -c $(CurCol) --clean`
+
+##### Quickfix + ask for issue id that will be used in PR title and branch name
+`quickfix2 -r $(ItemPath) -f $(ItemPath) -l $(CurLine) -c $(CurCol) --ask-for-issue-id`
+
 ##### QuickFix with custom commands
-`quickfix --repo $(SolutionDir) --file $(ItemPath) --line $(CurLine) --column $(CurCol) --command1 "C:\Program Files\Git\git-bash.exe" --args1 {dash}{dash}cd="{RepoFolder}"`
+`quickfix2 --repo $(SolutionDir) --file $(ItemPath) --line $(CurLine) --column $(CurCol) --command1 "C:\Program Files\Git\git-bash.exe" --args1 {dash}{dash}cd="{RepoFolder}"`
+
 
 </p>
 </details>
